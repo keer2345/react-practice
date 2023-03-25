@@ -42,3 +42,7 @@ export default defineConfig({
 ```sh
 npx eslint --init
 ```
+## Prettier
+```sh
+yarn add prettier -D
+```
