@@ -37,3 +37,8 @@ export default defineConfig({
 }
 
 ```
+
+## Eslint
+```sh
+npx eslint --init
+```
