@@ -18,3 +18,33 @@ Remove `'eslint:recommended'` in `.eslintrc.cjs`:
      'plugin:@typescript-eslint/recommended'
    ],
 ```
+
+## eslint-config-airbnb-typescript
+```sh
+yarn add eslint-config-airbnb-typescript -D
+```
+
+`.eslintrc.cjs`:
+```diff
+ extends: [
+     'airbnb',
++    'airbnb-typescript',
+     'airbnb/hooks',
+     'plugin:react/recommended',
+     'plugin:@typescript-eslint/recommended'
+],
+overrides: [],
+parser: '@typescript-eslint/parser',
+parserOptions: {
+     ecmaVersion: 'latest',
+-    sourceType: 'module'
++    sourceType: 'module',
++    project: './tsconfig.json'
+},
+```
+
+`tsconfig.json`
+```diff
+-  "include": ["src"],
++  "include": [".eslintrc.cjs", "src"],
+```
