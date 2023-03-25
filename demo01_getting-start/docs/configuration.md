@@ -5,7 +5,7 @@ Add dependency
 yarn add @types/node --dev
 ```
 
-`vite.config.ts`
+`vite.config.ts`:
 ```typescript
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
@@ -21,5 +21,19 @@ export default defineConfig({
     }
   }
 })
+```
+
+`tsconfig.json`:
+```json
+{
+  "compilerOptions": {
+    // ...
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  // ...
+}
 
 ```
