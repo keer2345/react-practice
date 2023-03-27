@@ -20,11 +20,13 @@ Remove `'eslint:recommended'` in `.eslintrc.cjs`:
 ```
 
 ## eslint-config-airbnb-typescript
+
 ```sh
 yarn add eslint-config-airbnb-typescript -D
 ```
 
 `.eslintrc.cjs`:
+
 ```diff
  extends: [
      'airbnb',
@@ -49,7 +51,27 @@ plugins: ['react', '@typescript-eslint'],
 ```
 
 `tsconfig.json`
+
 ```diff
 -  "include": ["src"],
 +  "include": [".eslintrc.cjs", "src"],
+```
+
+## Prettier
+
+```sh
+yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+```
+
+`.eslintrc.cjs`:
+
+```diff
+extends: [
+     'airbnb',
+     'airbnb-typescript',
+     'airbnb/hooks',
++    'plugin:prettier/recommended',
+     'plugin:react/recommended',
+     'plugin:@typescript-eslint/recommended'
+],
 ```
