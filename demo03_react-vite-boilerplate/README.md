@@ -39,3 +39,8 @@ module.exports = {
 @tailwind components;
 @tailwind utilities;
 ```
+## Router
+
+```sh
+yarn add react-router react-router-dom
+```
