@@ -44,3 +44,7 @@ module.exports = {
 ```sh
 yarn add react-router react-router-dom
 ```
+## Mobx
+```sh
+yarn add mobx mobx-react-lite
+```
