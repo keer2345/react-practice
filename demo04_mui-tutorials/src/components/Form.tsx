@@ -1,6 +1,8 @@
 import {
   Button,
+  Checkbox,
   FormControl,
+  FormControlLabel,
   FormGroup,
   InputLabel,
   MenuItem,
@@ -56,6 +58,13 @@ const Form = () => {
           variant='outlined'
           sx={{ margin: '20px' }}
         />
+        <br />
+        <FormGroup>
+          <FormControlLabel
+            label='I Agree T&C'
+            control={<Checkbox onChange={() => setInputs({ ...inputs, terms: !inputs.terms })} />}
+          />
+        </FormGroup>
         <br />
         <FormControl fullWidth>
           <InputLabel id='menu'>Courses</InputLabel>
