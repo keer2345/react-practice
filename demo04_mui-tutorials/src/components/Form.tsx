@@ -4,8 +4,11 @@ import {
   FormControl,
   FormControlLabel,
   FormGroup,
+  FormLabel,
   InputLabel,
   MenuItem,
+  Radio,
+  RadioGroup,
   Select,
   TextField
 } from '@mui/material'
@@ -17,7 +20,8 @@ const Form = () => {
     email: '',
     password: '',
     terms: false,
-    courses: ''
+    courses: '',
+    gender: ''
   })
 
   const handleChange = (e: any) => {
@@ -74,6 +78,15 @@ const Form = () => {
             <MenuItem value={'node'}>Node</MenuItem>
             <MenuItem value={'react'}>React</MenuItem>
           </Select>
+        </FormControl>
+        <br />
+        <FormControl>
+          <FormLabel>Gender</FormLabel>
+          <RadioGroup name='gender' onChange={handleChange}>
+            <FormControlLabel value={'male'} label='Male' control={<Radio />} />
+            <FormControlLabel value={'female'} label='FeMale' control={<Radio />} />
+            <FormControlLabel value={'other'} label='Other' control={<Radio />} />
+          </RadioGroup>
         </FormControl>
         <br />
         <Button type='submit'>Submit</Button>
