@@ -1,27 +1,23 @@
-import { Button, TextField, Typography } from '@mui/material'
-import Form from './components/Form'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Layout from './components/Layout/Layout'
+import Home from './pages/Home'
+import About from './pages/About'
+import Contact from './pages/Contact'
+import Menu from './pages/Menu'
+import Pagenotfound from './pages/Pagenotfound'
 
 function App() {
   return (
     <div>
-      <Typography variant='h1' component={'h1'} sx={{ color: 'red' }}>
-        Techinfo YT
-      </Typography>
-      {/* <Button variant='contained' color='success' sx={{ margin: '30px' }}>
-        Click Me
-      </Button>
-      <Button variant='text'>Click Me</Button>
-      <Button variant='outlined' onClick={() => alert('you clicked')}>
-        Click Me for action
-      </Button>
-      <br />
-      <br />
-      <TextField type='text' placeholder='name' variant='standard' sx={{ margin: '30px' }} />
-      <TextField type='text' placeholder='name' variant='outlined' sx={{ margin: '30px' }} />
-      <TextField type='text' placeholder='name' variant='filled' sx={{ margin: '30px' }} /> */}
-
-      <Form/>
-
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/about' element={<About />}></Route>
+          <Route path='/contact' element={<Contact />}></Route>
+          <Route path='/menu' element={<Menu />}></Route>
+          <Route path='*' element={<Pagenotfound />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   )
 }
